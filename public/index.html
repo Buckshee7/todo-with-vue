@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/bundle.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>ToDo List</title>
+</head>
+<body>
+    <h1>ToDo List</h1>
+    <div  id="app">
+        <ul>
+            <li v-for="todo in todos"  v-bind:class="todo.priority === 'high' ? 'high':'low'">
+                {{ todo.thing }}
+                <span v-if="todo.priority === 'high'">This needs DONE</span>
+                <span v-else>Can pretty much ignore this</span>
+            </li>
+            
+        </ul>
+        <form action="" v-on:submit.prevent="addItem">
+            <label for="newItem">New Item: </label>
+            <input type="text" v-model="item" required>
+
+            <label for="high">High</label>
+            <input type="radio" name="priority" id="high" value="high" required v-model='priority'>
+            <label for="low">Low</label>
+            <input type="radio" name="priority" id="low" value="low" required v-model='priority'>
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>

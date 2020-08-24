@@ -1,0 +1,16 @@
+body {
+    background-color: hotpink;
+}
+
+span {
+    margin-left: 30px;
+}
+
+.high > span{
+    font-style: bold;
+    color: red;
+}
+
+.low > span {
+    font-style: italic;
+}
